@@ -5,7 +5,7 @@ using UnityEngine;
 public class monsterManage : MonoBehaviour
 {
     private float stTime;
-    monsterStatus m_Status = monsterStatus.idle;
+    private monsterStatus m_Status;
     public Animator ani;
     public float t;
     [Range(1,3)]
@@ -14,6 +14,7 @@ public class monsterManage : MonoBehaviour
     private int currentWaypointIndex=0;
     private void Start()
     {
+        m_Status = monsterStatus.idle;
         Point = new Vector3[3];
         ani = GetComponent<Animator>();
         Point[0]=transform.position;

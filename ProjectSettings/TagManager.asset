@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - player
   layers:
   - Default
   - TransparentFX
@@ -42,19 +43,19 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Layer 1
+  - name: Layer1 _bg
     uniqueID: 2425651459
     locked: 0
-  - name: Layer 2
+  - name: Layer 2_ground
     uniqueID: 4250941897
     locked: 0
-  - name: Layer 3
+  - name: Layer 3_NPC
     uniqueID: 4189426099
     locked: 0
-  - name: Layer 4
+  - name: Layer 4_monter
     uniqueID: 2612085927
     locked: 0
-  - name: Layer 5
+  - name: Layer 5_character
     uniqueID: 2015428777
     locked: 0
   - name: Layer 6

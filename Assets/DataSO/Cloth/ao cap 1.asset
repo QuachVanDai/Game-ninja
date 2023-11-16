@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0040245b6eeda54a8c70f3f4a5875e1, type: 3}
+  m_Name: ao cap 1
+  m_EditorClassIdentifier: 
+  id: 1
+  name: "\xC1o th\xF4"
+  icon: {fileID: 0}
+  powerRequired: 0
+  Description: "Gi\xFAp gi\u1EA3m s\xE1t th\u01B0\u01A1ng"
+  itemType: 2
+  equipmentType: 0
+  armorValue: 0
+  bodyIdle:
+  - {fileID: 21300000, guid: d71cb9917396402418d318bc97a89b7b, type: 3}
+  bodyRun:
+  - {fileID: 21300000, guid: 7d84a26b01811cb468ae583ac5a71aa7, type: 3}
+  - {fileID: 21300000, guid: 8ee140f1676cd1b42bbc0e3aed1cc483, type: 3}
+  - {fileID: 21300000, guid: 30ba015d899a33d42bb3e4e072fe3341, type: 3}
+  - {fileID: 21300000, guid: 47959b7fe7e1d044a98985f3c304b4eb, type: 3}
+  - {fileID: 21300000, guid: af0d50c720ed2b546a966ecac56bbf40, type: 3}
+  bodyAttack:
+  - {fileID: 21300000, guid: 503f663ab50f2704f88554e826f39b60, type: 3}
+  - {fileID: 21300000, guid: 0301fe90379a04945b71cefaf35ad821, type: 3}
+  - {fileID: 21300000, guid: 2fe5a06b7e02b694f9358ba654b49774, type: 3}
+  - {fileID: 21300000, guid: 223fe3e92fd6c444c90591572ecda699, type: 3}

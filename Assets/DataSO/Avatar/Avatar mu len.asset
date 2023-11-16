@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ff6bc9c66f2b240b3b1d62815f18f8, type: 3}
+  m_Name: Avatar mu len
+  m_EditorClassIdentifier: 
+  id: 41
+  name: Goku ssj 3
+  icon: {fileID: 0}
+  powerRequired: 2000000
+  Description: "D\xF9ng \u0111\u1EC3 thay \u0111\u1ED5i khu\xF4n m\u1EB7t"
+  itemType: 2
+  equipmentType: 5
+  headIdle:
+  - {fileID: 21300000, guid: e3a63705f209cc24d9aeada5636463d0, type: 3}
+  headRun:
+  - {fileID: 21300000, guid: 2129223beefc1a848b553c37cbd89a37, type: 3}
+  headAttack:
+  - {fileID: 21300000, guid: e3a63705f209cc24d9aeada5636463d0, type: 3}
