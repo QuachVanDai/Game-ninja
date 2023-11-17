@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private InventorySlot itemSlotPrefabs;
     private readonly List<InventorySlot> slots = new();
-    public const int DEFAULT_CAPACITY = 10;
+    public const int DEFAULT_CAPACITY = 30;
     public int Capacity => slots.Count;
 
     private void Awake()
