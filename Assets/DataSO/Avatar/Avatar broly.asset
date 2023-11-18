@@ -25,3 +25,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2425b72bed7e6914d81845b81f1a4a8f, type: 3}
   headAttack:
   - {fileID: 21300000, guid: 7fe66c52d61121243ae6934059607ca0, type: 3}
+  headDown:
+  - {fileID: 21300000, guid: 7fe66c52d61121243ae6934059607ca0, type: 3}

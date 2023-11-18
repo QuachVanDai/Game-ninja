@@ -32,10 +32,10 @@ public class CharacterController2D : MonoBehaviour
         isActtack = true;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-        jumInput = Input.GetAxis("Vertical");
+        moveInput = Input.GetAxisRaw(TagScript.Horizontal);
+        jumInput = Input.GetAxis(TagScript.Vertical);
         onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
         if (!onGround && jumInput == 0 )
         {
@@ -63,7 +63,7 @@ public class CharacterController2D : MonoBehaviour
             else
             {
                 animator.SetFloat("Speed", Mathf.Abs(moveInput));
-                animator.SetBool("IsAttack", false);
+               // animator.SetBool("IsAttack", false);
             }
         }
         animator.SetFloat("Jumping", m_Rigidbody2D.velocity.y);
@@ -74,7 +74,7 @@ public class CharacterController2D : MonoBehaviour
         animator.SetFloat("Speed", 0);
         animator.SetBool("IsAttack", true);
         isActtack = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.23f);
         animator.SetBool("IsAttack", false);
         yield return new WaitForSeconds(0.3f);
         isActtack = true;

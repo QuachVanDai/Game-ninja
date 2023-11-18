@@ -16,7 +16,7 @@ public class SkillAnimation : MonoBehaviour
     public void AnimationSkill(FrameSkill _frameSkill)
     {
         gameObject.SetActive(true);
-        StartCoroutine(AnimatorFrame.FrameGame(skillSprite, _frameSkill.skillFrames, true, null, 0.1f));
+        StartCoroutine(AnimatorFrame.FrameGame(skillSprite, _frameSkill.skillFrames, true, null, 0.05f));
         MoveSkill();
     }
     void MoveSkill()

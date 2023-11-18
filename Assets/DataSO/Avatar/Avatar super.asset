@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 43
   name: Goku ssj 3
-  icon: {fileID: 21300000, guid: dd877f91c7c400b4cb95e6056083c4d3, type: 3}
+  icon: {fileID: 0}
   powerRequired: 2000000
   Description: "D\xF9ng \u0111\u1EC3 thay \u0111\u1ED5i khu\xF4n m\u1EB7t"
   itemType: 2
@@ -24,4 +24,6 @@ MonoBehaviour:
   headRun:
   - {fileID: 21300000, guid: cf7d8fcb5745dc342a00a65412531c16, type: 3}
   headAttack:
+  - {fileID: 21300000, guid: dd877f91c7c400b4cb95e6056083c4d3, type: 3}
+  headDown:
   - {fileID: 21300000, guid: dd877f91c7c400b4cb95e6056083c4d3, type: 3}

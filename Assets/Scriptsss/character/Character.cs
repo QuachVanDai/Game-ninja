@@ -30,6 +30,7 @@ public class Character : MonoBehaviour
             CharacterCustomization(characterHead.headIdle, avatarSO.GetSpriteIdle);
             CharacterCustomization(characterHead.headRun, avatarSO.GetSpriteRun);
             CharacterCustomization(characterHead.headAttack, avatarSO.GetSpriteAttack);
+            CharacterCustomization(characterHead.headDown, avatarSO.GetSpriteDown);
         }    
 
         //// Thay đổi Áo
@@ -38,6 +39,7 @@ public class Character : MonoBehaviour
             CharacterCustomization(characterBody.bodyIdle, clothSO.GetSpriteIdle);
             CharacterCustomization(characterBody.bodyRun, clothSO.GetSpriteRun);
            CharacterCustomization(characterBody.bodyAttack, clothSO.GetSpriteAttack);
+           CharacterCustomization(characterBody.bodyDown, clothSO.GetSpriteDown);
         }
 
         //// Thay đổi Quần
@@ -47,6 +49,7 @@ public class Character : MonoBehaviour
             CharacterCustomization(characterLeg.legIdle, pantSO.GetSpriteIdle);
             CharacterCustomization(characterLeg.legRun, pantSO.GetSpriteRun);
             CharacterCustomization(characterLeg.legAttack, pantSO.GetSpriteAttack);
+            CharacterCustomization(characterLeg.legDown, pantSO.GetSpriteDown);
         }
     }
 

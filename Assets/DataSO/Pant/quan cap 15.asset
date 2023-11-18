@@ -30,3 +30,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 32b5164524daa8a43b6eb582bbf51c45, type: 3}
   legAttack:
   - {fileID: 21300000, guid: 1827aed1f56a74c42ba3d266a86d4b9b, type: 3}
+  legDown:
+  - {fileID: 21300000, guid: b8b29132b53e85a499b8241403bd3501, type: 3}

@@ -1,11 +1,11 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float speed;
-    public FrameAnimation framePlayer;
+    //public FrameAnimation framePlayer;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float jumpForce;
@@ -137,3 +137,4 @@ public class Player : MonoBehaviour
     }
 }
 public enum Status { IDLE, RUN, JUMP, ATTACK, HIT, DEATH }
+*/

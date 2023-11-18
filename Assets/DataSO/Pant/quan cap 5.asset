@@ -29,4 +29,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c691e114d3a6e904ca305354d1362e42, type: 3}
   - {fileID: 21300000, guid: 21b147611b640dd479798533b0d25b30, type: 3}
   legAttack:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 0f89ac7ed18646947b3a3ba1e4f40bab, type: 3}
+  legDown:
+  - {fileID: 21300000, guid: 531cd3ac3c693824890cff81502d99c5, type: 3}

@@ -544,7 +544,6 @@ GameObject:
   - component: {fileID: 1203535027844764248}
   - component: {fileID: 4076887334518098559}
   - component: {fileID: 4433145859586246865}
-  - component: {fileID: 9094500515056139203}
   - component: {fileID: 3533027396825969667}
   m_Layer: 0
   m_Name: Player
@@ -634,40 +633,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.102228284}
   m_Size: {x: 0.5, y: 1.0955434}
   m_Direction: 0
---- !u!114 &9094500515056139203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7191483053045404719}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf9a3612a930114da8a3903d8512e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  framePlayer: {fileID: 11400000, guid: b3717858b1c2809438d6026b9c47e802, type: 2}
-  groundCheck: {fileID: 7888982217808405175}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  jumpForce: 5
-  onGround: 0
-  sprites:
-  - {fileID: 3014830849232932655}
-  - {fileID: 4724708236488019895}
-  - {fileID: 1256153566673405587}
-  - {fileID: 8218672890220159436}
-  - {fileID: 1344266075293710049}
-  jumpSprite:
-  - {fileID: 21300000, guid: 210f28fc120b7ef499078ab3bd73a988, type: 3}
-  - {fileID: 21300000, guid: 441a2f7187a00684aa9c356491ea75ba, type: 3}
-  - {fileID: 21300000, guid: e3f515839696dbc4da13193e94caa68e, type: 3}
-  - {fileID: 21300000, guid: a27de7b98939e624793d90665b87a952, type: 3}
-  deathSprite: {fileID: 21300000, guid: d01e1485989cbd04e992f746eeb794fa, type: 3}
-  skillAnimation: {fileID: 4013245647922302900}
-  frameSkill: {fileID: 11400000, guid: 79205733a7c05d4469c5587c3f0e7148, type: 2}
 --- !u!61 &3533027396825969667
 BoxCollider2D:
   m_ObjectHideFlags: 0
