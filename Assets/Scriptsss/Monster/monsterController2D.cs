@@ -5,16 +5,17 @@ using UnityEngine;
 public class monsterController2D : MonoBehaviour
 {
     private float stTime;
-    private monsterStatus m_Status;
+    private monsterStatus Status;
     public Animator ani;
     public float t;
     [Range(1,3)]
     public float monterSpeed=1;
+    public bool m_FacingRight = true;
     private Vector3[] Point;
     private int currentWaypointIndex=0;
     private void Start()
     {
-        m_Status = monsterStatus.idle;
+        Status = monsterStatus.idle;
         Point = new Vector3[3];
         ani = GetComponent<Animator>();
         Point[0]=transform.position;
@@ -25,7 +26,6 @@ public class monsterController2D : MonoBehaviour
     }
     private void Update()
     {
-    
         if (Time.time - stTime <= t)
         {
             PlayAnimation(monsterStatus.idle);
@@ -33,8 +33,12 @@ public class monsterController2D : MonoBehaviour
         else 
         {
             PlayAnimation(monsterStatus.move);
-            if (Time.time - stTime > t*5)
+            if (Time.time - stTime > t*3)
+            {
                 stTime = Time.time;
+                t=Random.Range(2,4);
+            }
+               
         }
     }
     public void monterMove()
@@ -52,30 +56,31 @@ public class monsterController2D : MonoBehaviour
         }
         transform.position = Vector2.MoveTowards(transform.position, Point[currentWaypointIndex], Time.deltaTime * monterSpeed);
     }
-    void Flip()
+    public void Flip()
     {
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        m_FacingRight = !m_FacingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
     void PlayAnimation(monsterStatus Status)
     {
        switch (Status)
         {
             case monsterStatus.idle:
-                m_Status = monsterStatus.idle;
+                Status = monsterStatus.idle;
                 ani.SetBool("isMove", false);
                 break;
             case monsterStatus.move:
-                m_Status = monsterStatus.move;
+                Status = monsterStatus.move;
                 ani.SetBool("isMove", true);
                 monterMove();
                 break;
             case monsterStatus.attack:
-                m_Status = monsterStatus.attack; 
+                Status = monsterStatus.attack; 
                 break;
             case monsterStatus.death:
-                m_Status = monsterStatus.death; 
+                Status = monsterStatus.death; 
                 break;
         }
     }

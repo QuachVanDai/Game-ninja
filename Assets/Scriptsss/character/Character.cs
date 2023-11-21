@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public string Name;
+    public int hp;
+    public int mana;
+    public string className;
+
     [SerializeField] private Head characterHead;
     [SerializeField] private Body characterBody;
     [SerializeField] private Leg characterLeg;

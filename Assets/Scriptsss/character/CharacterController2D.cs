@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
@@ -16,14 +16,10 @@ public class CharacterController2D : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private Animator animator;
 
-    [SerializeField] SkillAnimation skillAnimation;
-    [SerializeField] FrameSkill frameSkill;
-
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float jumpForce;
 
-    [SerializeField]  CapsuleCollider2D capsu;
 
     private void Awake()
     {
@@ -31,54 +27,36 @@ public class CharacterController2D : MonoBehaviour
         animator = GetComponent<Animator>();
         isActtack = true;
     }
-
+    public bool isGround()
+    {
+       return onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
+    }
     private void Update()
     {
         moveInput = Input.GetAxisRaw(TagScript.Horizontal);
         jumInput = Input.GetAxis(TagScript.Vertical);
-        onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
-        if (!onGround && jumInput == 0 )
+       
+        if (!isGround() && jumInput == 0 )
         {
             animator.SetBool("IsIdleToDown", true);
         }
         if (moveInput != 0)
             Move((moveInput * runSpeed) * Time.fixedDeltaTime);
-        if (onGround)
+        if (isGround())
         {
-            capsu.isTrigger = false;
             animator.SetBool("IsIdleToJump", false);
             animator.SetBool("IsIdleToDown", false);
-            if (jumInput>0)
+            if (jumInput>0 && m_Rigidbody2D.velocity.y==0)
             {
                 m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, jumpForce);
                 animator.SetBool("IsIdleToJump", true);
                 animator.SetBool("IsIdleToDown", true);
-                capsu.isTrigger = true;
             }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                if(isActtack)
-                StartCoroutine(playerAttack());
-            }
-            else
-            {
                 animator.SetFloat("Speed", Mathf.Abs(moveInput));
-               // animator.SetBool("IsAttack", false);
-            }
         }
         animator.SetFloat("Jumping", m_Rigidbody2D.velocity.y);
     }
-    IEnumerator playerAttack()
-    {
-        skillAnimation.AnimationSkill(frameSkill);
-        animator.SetFloat("Speed", 0);
-        animator.SetBool("IsAttack", true);
-        isActtack = false;
-        yield return new WaitForSeconds(0.23f);
-        animator.SetBool("IsAttack", false);
-        yield return new WaitForSeconds(0.3f);
-        isActtack = true;
-    }
+    
     public void Move(float move)
     {
          Vector3 targetVelocity = new Vector2(move * 25f, m_Rigidbody2D.velocity.y);
@@ -94,7 +72,7 @@ public class CharacterController2D : MonoBehaviour
         
     }
  
-	public void Flip()
+    public void Flip()
     {
         m_FacingRight = !m_FacingRight;
         Vector3 theScale = transform.localScale;

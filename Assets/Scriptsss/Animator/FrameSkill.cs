@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Animation/Frame Skill")]
+[CreateAssetMenu(menuName = "Animations/Frame Skill")]
 public class FrameSkill : ScriptableObject
 {
     public Sprite[] skillFrames;
