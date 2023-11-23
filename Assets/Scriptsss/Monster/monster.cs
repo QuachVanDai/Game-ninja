@@ -19,9 +19,5 @@ public class monster:MonoBehaviour
     {
         return this;
     }
-    private void OnMouseDown()
-    {
-
-
-    }
+ 
 }

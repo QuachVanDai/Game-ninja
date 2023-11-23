@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+public enum monsterStatus { idle, move, attack, death }
 
 public class monsterController2D : MonoBehaviour
 {
-    private float stTime;
+
     private monsterStatus Status;
     public Animator ani;
     public float t;
@@ -22,24 +22,6 @@ public class monsterController2D : MonoBehaviour
         Point[0].x=transform.position.x + 1;
         Point[1]=transform.position;
         Point[1].x = transform.position.x - 1;
-        stTime = Time.time;
-    }
-    private void Update()
-    {
-        if (Time.time - stTime <= t)
-        {
-            PlayAnimation(monsterStatus.idle);
-        }
-        else 
-        {
-            PlayAnimation(monsterStatus.move);
-            if (Time.time - stTime > t*3)
-            {
-                stTime = Time.time;
-                t=Random.Range(2,4);
-            }
-               
-        }
     }
     public void monterMove()
     {
@@ -63,7 +45,11 @@ public class monsterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    void PlayAnimation(monsterStatus Status)
+    public void monsterIsDeath()
+    {
+
+    }
+    public void PlayAnimation(monsterStatus Status)
     {
        switch (Status)
         {
@@ -80,9 +66,9 @@ public class monsterController2D : MonoBehaviour
                 Status = monsterStatus.attack; 
                 break;
             case monsterStatus.death:
-                Status = monsterStatus.death; 
+                Status = monsterStatus.death;
+                ani.SetBool("isDeath", true);
                 break;
         }
     }
 }
-public enum monsterStatus { idle, move, attack, death }

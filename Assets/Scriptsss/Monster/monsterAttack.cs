@@ -6,8 +6,7 @@ using System;
 public class monsterAttack :MonoBehaviour
 {
     public float radius = 1.0f;
-    public LayerMask PlayerMask;
-    public LayerMask targetLayer;
+    public LayerMask targetPlayer;
     public Transform firePoint;
     public GameObject bulletPrefab;
      GameObject bullet;
@@ -32,7 +31,7 @@ public class monsterAttack :MonoBehaviour
 
     public void findPlayer()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, radius, Vector2.zero, 0.0f, targetLayer);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, radius, Vector2.zero, 0.0f, targetPlayer);
         foreach (RaycastHit2D hit in hits)
         {
             // Kiểm tra xem đối tượng va chạm có phải là quái vật hay không

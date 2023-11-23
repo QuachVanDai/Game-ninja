@@ -5,7 +5,7 @@ using UnityEngine;
 public class monsterWeapons : MonoBehaviour
 {
     private GameObject playerObject;
-    public float bulletSpeed = 5f;
+    public float bulletSpeed = 6f;
 
     private void Start()
     {

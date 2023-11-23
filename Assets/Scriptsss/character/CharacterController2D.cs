@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using Unity.VisualScripting;
 public class CharacterController2D : MonoBehaviour
 {
     [Header("Character")]
@@ -8,29 +8,24 @@ public class CharacterController2D : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;
     public float runSpeed = 0f;
     public bool m_FacingRight = true;
-    public bool onGround,isActtack;
+    public bool onGround;
 
     private Rigidbody2D m_Rigidbody2D;
     private float moveInput = 0f,jumInput;
-
     private Vector3 velocity = Vector3.zero;
     private Animator animator;
 
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] float jumpForce;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float jumpForce;
 
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        isActtack = true;
     }
-    public bool isGround()
-    {
-       return onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
-    }
+
     private void Update()
     {
         moveInput = Input.GetAxisRaw(TagScript.Horizontal);
@@ -56,7 +51,10 @@ public class CharacterController2D : MonoBehaviour
         }
         animator.SetFloat("Jumping", m_Rigidbody2D.velocity.y);
     }
-    
+    public bool isGround()
+    {
+        return onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
+    }
     public void Move(float move)
     {
          Vector3 targetVelocity = new Vector2(move * 25f, m_Rigidbody2D.velocity.y);
@@ -79,4 +77,5 @@ public class CharacterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+  
 }

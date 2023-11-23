@@ -5,15 +5,23 @@ using UnityEngine.UI;
 
 public class monsterAttacked : MonoBehaviour
 {
-
-    public  monster ob_mon;
+    private monsterController2D monsterController2D;
+    public monster ob_mon;
     public Image fill_bar;
     public int max_hp;
+    public GameObject selected;
+    public GameObject ani_Attacked;
     public  monster GetMonster() { return this.ob_mon; }
     void Start()
     {
-       ob_mon = GetComponent<monster>();
+        monsterController2D = GetComponent<monsterController2D>();
+        ob_mon = GetComponent<monster>();
         max_hp = ob_mon._hp;
+    }
+    public void Update()
+    {
+        if(CharacterAttack.instance.mon==this) { selected.SetActive(true); }
+        else { selected.SetActive(false); }
     }
     public void update_blood(int currency_blood, int max_blood)
     {
@@ -21,21 +29,25 @@ public class monsterAttacked : MonoBehaviour
     }
     private void OnMouseDown()
     {
-
         CharacterAttack.instance.findMonster(this);
     }
     public void Attacked(int damage)
     {
         ob_mon._hp -= damage;
+        StartCoroutine(aniAcctacked());
         if (ob_mon._hp < 0)
         {
-            Destroy(gameObject);
+            monsterController2D.PlayAnimation(monsterStatus.death);
+            Destroy(gameObject,0.5f);
         }
         update_blood(ob_mon._hp, max_hp);
     }
-    // Update is called once per frame
-    void Update()
+
+    IEnumerator aniAcctacked()
     {
-       
+        ani_Attacked.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
+        ani_Attacked.SetActive(false);
     }
+    // Update is called once per frame
 }
