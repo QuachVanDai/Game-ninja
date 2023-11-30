@@ -626,8 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e60f47702ecad43a1551bcfea70867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ob_mon: {fileID: 0}
-  fill_bar: {fileID: 1736609431706029379}
+  currMoster: {fileID: 0}
   max_hp: 0
   selected: {fileID: 6251706335288152177}
   ani_Attacked: {fileID: 8687981773910980156}
@@ -648,6 +647,7 @@ MonoBehaviour:
   _level: 
   _hp: 100
   _damage: 51
+  fill_bar: {fileID: 1736609431706029379}
 --- !u!114 &-3589299667855546794
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,4 +5,5 @@ using UnityEngine;
 public class FrameSkill : ScriptableObject
 {
     public Sprite[] skillFrames;
+    public int mp;
 }
