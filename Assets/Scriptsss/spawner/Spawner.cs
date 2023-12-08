@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Spawner : NCKHMonobehaviour
+public abstract class Spawner : NCKHMonoBehaviour
 {
     [SerializeField] protected List<Transform> lstPrefas;
     protected override void loadComponets()

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c647a5f36bae584db02bb6da7d2ef21, type: 3}
+  m_Name: skillLv15
+  m_EditorClassIdentifier: 
+  skillFrames:
+  - {fileID: 21300000, guid: 738b4263101df32468642b6665770341, type: 3}
+  - {fileID: 21300000, guid: 2ee4bf9cba2ecc34db5cb61a2c7214e0, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: deeca2285ded6364d9a3529fcc1937f9, type: 3}
+  - {fileID: 21300000, guid: c73fae19578a7a947b0d8ae66d4bcbbd, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: deeca2285ded6364d9a3529fcc1937f9, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 7c32617215526744d8c0e57d52918caf, type: 3}
+  - {fileID: 21300000, guid: 3cab6878ecaf4714f8a64bc59948eab8, type: 3}
+  mp: 60
+  timeSkill: 5

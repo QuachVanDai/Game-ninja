@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class monsterWeapons : MonoBehaviour
@@ -7,11 +6,11 @@ public class monsterWeapons : MonoBehaviour
     private GameObject playerObject;
     public int min_damage,max_damage;
     public float bulletSpeed = 7f;
-    public CharacterAttacked character;
+    public PlayerAttacked character;
     private void Start()
     {
         playerObject = GameObject.FindWithTag("player");
-        character = FindAnyObjectByType<CharacterAttacked>();
+        character = FindAnyObjectByType<PlayerAttacked>();
     }
     private void FixedUpdate()
     {

@@ -1,10 +1,7 @@
-using DG.Tweening.Core.Easing;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class monsterSpawn : NCKHMonobehaviour
+using UnityEngine;
+
+public class monsterSpawn : NCKHMonoBehaviour
 {
     private Transform _tranform;
     [SerializeField]
@@ -15,7 +12,6 @@ public class monsterSpawn : NCKHMonobehaviour
 
     void Start()
     {
-        
         if (_tranform != null) return;
         Monster = Monster.GetMonster();
         if (Monster == null) return;

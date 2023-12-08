@@ -1,6 +1,6 @@
-using System.Diagnostics;
+
 using UnityEditor;
-using UnityEngine;
+
 using UnityEngine.SceneManagement;
 
 public static class Game
@@ -8,6 +8,7 @@ public static class Game
     public static void Continue()
     {
         SceneManager.LoadSceneAsync("langtone");
+        gameManager.Instance.IsPlaygame = true;
     }
     public static void Quit()
     {

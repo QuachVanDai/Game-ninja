@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Sword10x
   m_EditorClassIdentifier: 
   skillFrames:
-  - {fileID: 21300000, guid: 76ab42d89c11efd4b9f7ee7f1b7bb560, type: 3}
-  - {fileID: 21300000, guid: 1cc6930b518e0364d89214f7fb824967, type: 3}
-  - {fileID: 21300000, guid: 1234bb8def969a84193995da6cd95250, type: 3}
-  - {fileID: 21300000, guid: 5ba251ed4c70bfd40bc9032144dca6ef, type: 3}
+  - {fileID: 21300000, guid: 5f16ceb2a3c6056408112f8694ed679b, type: 3}
+  - {fileID: 21300000, guid: 4568dfeec2b796042ac38f1637fe669e, type: 3}
+  - {fileID: 21300000, guid: b124c772fb070094895e51ebaf95e74a, type: 3}
+  - {fileID: 21300000, guid: 89ecacfb0c4a8fd41bf180cadbe31da4, type: 3}
+  mp: 0
+  timeSkill: 0

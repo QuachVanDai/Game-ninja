@@ -1,49 +1,64 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class monsterAttacked : MonoBehaviour
+public class monsterAttacked : NCKHMonoBehaviour
 {
     private monsterController2D monsterController2D;
     public monster currMoster;
-    public int max_hp;
-    public GameObject selected;
-    public GameObject ani_Attacked;
-    public item i;
+    public Transform selected;
+    public Transform ani_Attacked;
+    public PlayerAttack PlayerAttack;
     void Start()
     {
         monsterController2D = GetComponent<monsterController2D>();
         currMoster = GetComponent<monster>();
-        max_hp = currMoster._hp;
+    }
+    protected override void loadComponets()
+    {
+        base.loadComponets();
+        selected = transform.Find("selected");
+        ani_Attacked = transform.Find("ani_Attacked");
+        GameObject player = GameObject.FindWithTag("player");
+        PlayerAttack = player.GetComponent<PlayerAttack>();
     }
     public void Update()
     {
-        if(CharacterAttack.instance.mon==this) { selected.SetActive(true); }
-        else { selected.SetActive(false); }
+        if (PlayerAttack.monsterAttacted == this) 
+        { 
+            selected.gameObject.SetActive(true);
+            
+        }
+        else 
+        {
+            selected.gameObject.SetActive(false);
+        }
     }
    
     private void OnMouseDown()
     {
-        CharacterAttack.instance.findMonster(this);
+        PlayerAttack.findMonster(this);
+        currMoster.update_hp(currMoster._currhp, currMoster.HP,currMoster._name);
     }
     public void Attacked(int damage)
     {
-        currMoster._hp -= damage;
+        currMoster._currhp -= damage;
         StartCoroutine(aniAcctacked());
-        if (currMoster._hp < 0)
+        currMoster.damaged(damage.ToString());
+        if (currMoster._currhp < 0)
         {
-            i.Die(transform.position,Quaternion.identity);
+            // i.Die(transform.position,Quaternion.identity);
+            systemUi.Instance.infoMonster.gameObject.SetActive(false);
             monsterController2D.PlayAnimation(monsterStatus.death);
             Destroy(gameObject,0.5f);
+            return;
         }
-       currMoster.update_hp(currMoster._hp, max_hp);
+       currMoster.update_hp(currMoster._currhp, currMoster.HP,currMoster._name);
     }
 
     IEnumerator aniAcctacked()
     {
-        ani_Attacked.SetActive(true);
+        ani_Attacked.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.4f);
-        ani_Attacked.SetActive(false);
+        ani_Attacked.gameObject.SetActive(false);
     }
 }

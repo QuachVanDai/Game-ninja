@@ -1,140 +1,101 @@
-/*using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : NCKHMonoBehaviour
 {
-    public float speed;
-    //public FrameAnimation framePlayer;
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundLayer;
-    [SerializeField] float jumpForce;
-    public bool onGround;
+    private static Player instance;
+    public string _Name;
+    private float _hp=10000;
+    public float _currhp=10000;
+    private float _mp=10000;
+    public float _currmp=10000;
+    public string _className; 
+    public int _level=1;
+    public float _percentExp;
+    public int _gold;
+    private Dictionary<int, Tuple<int, int>> playerDamage
+        = new Dictionary<int, Tuple<int, int>>();
+    public TextMeshProUGUI currentName;
+    public TextMeshProUGUI currentHP;
+    public TextMeshProUGUI currentMP;
+    public TextMeshProUGUI currentClassName;
+    public TextMeshProUGUI currentMinDamage;
+    public TextMeshProUGUI currentMaxDamage;
+    public TextMeshProUGUI currentLevel;
+    public TextMeshProUGUI currentPercentExp;
+    public TextMeshProUGUI currentGold;
 
-    Rigidbody2D rb;
-    float h;
 
-    bool facingRight;
-    [SerializeField] SpriteRenderer[] sprites;
+    [SerializeField] private Image fill_bar_HP;
+    [SerializeField] private Image fill_bar_MP;
+    public Exp x;
 
-    Coroutine bodyFrame;
-    Coroutine footFrame;
-    Status statusPlayer = Status.IDLE;
-    [SerializeField] Sprite[] jumpSprite;
-    [SerializeField] Sprite deathSprite;
+    public float HP { get { return _hp; } }
+    public float MP { get { return _mp; } }
+    public static Player Instance { get => instance; }
 
-    [SerializeField] SkillAnimation skillAnimation;
-    [SerializeField] FrameSkill frameSkill;
-    void Awake()
+    protected override void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        base.Awake();
+        Player.instance = this;
     }
-    void Start()
+   
+    protected override void loadComponets()
     {
-        PlayAnimation(statusPlayer);
+        base.loadComponets();
+        GameObject Object = GameObject.Find("txt_hp");
+        currentHP = Object.GetComponent<TextMeshProUGUI>();
+        Object = GameObject.Find("txt_mp");
+        currentMP = Object.GetComponent<TextMeshProUGUI>();
+        Object = GameObject.Find("percentage");
+        currentPercentExp = Object.GetComponent<TextMeshProUGUI>();
+        Object = GameObject.Find("level");
+        currentLevel = Object.GetComponent<TextMeshProUGUI>();
+                Object = GameObject.Find("full_hp");
+        fill_bar_HP = Object.GetComponent<Image>();
+                Object = GameObject.Find("full_mp");
+        fill_bar_MP = Object.GetComponent<Image>();
+        setPlayerDamage();
+        currentLevel.text = _level.ToString();
+        currentPercentExp.text = _percentExp.ToString("F2")+"%";
+        _hp = _currhp;
+        _mp = _currmp;
+        update_hp(this._hp, this._hp,this._hp.ToString());
+        update_mp(this._mp, this._mp, this._mp.ToString());
     }
-
-    void Update()
+ 
+    public Tuple<int, int> getDamage(int index)
     {
-        Vector3 v = gameObject.transform.position;
-        v.z = -10;
-        h = Input.GetAxisRaw(TagScript.Horizontal);
-        onGround = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            
-            if (onGround)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                AnimationFullBody(true);
-                statusPlayer = Status.JUMP;
-                StartCoroutine(AnimatorFrame.FrameGame(sprites[4], jumpSprite, true, () =>
-                {
-                    AnimationFullBody(false);
-                    PlayAnimation(Status.JUMP);
-                }, 0.1f
-                ));
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.I)) PlayAnimation(Status.IDLE);
-        if (Input.GetKeyDown(KeyCode.R)) PlayAnimation(Status.RUN);
-        if (Input.GetKeyDown(KeyCode.J)) PlayAnimation(Status.JUMP);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (statusPlayer == Status.ATTACK) return;
-            PlayAnimation(Status.ATTACK);
-            skillAnimation.AnimationSkill(frameSkill);
-        }
-
+        Tuple<int, int> g = playerDamage[index];
+        return g;
     }
-
-    void FixedUpdate()
+    public void setPlayerDamage()
     {
-        rb.velocity = new Vector2(h * speed, rb.velocity.y);
-
-        if (h > 0 && facingRight || h < 0 && !facingRight) Flip();
-        
-        //if (!onGround) PlayAnimation(Status.JUMP);
-
-        if (statusPlayer != Status.RUN && statusPlayer != Status.JUMP)
-            if (h > 0 || h < 0) PlayAnimation(Status.RUN);
-
-        if (h == 0)
+        int min_d=110, max_d=120;
+        for (int i = 1; i <= 20; i++)
         {
-            if (statusPlayer == Status.IDLE || statusPlayer == Status.ATTACK || statusPlayer == Status.JUMP) return;
-            PlayAnimation(Status.IDLE);
+            playerDamage.Add(i  , new Tuple<int, int>(min_d, max_d));
+            min_d += 30;
+            max_d += 30;
         }
     }
-    void Flip()
+    public Player GetCharacter()
     {
-        facingRight = !facingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        return this;
     }
-    void PlayAnimation(Status status)
+    public void update_hp(float currency_hp, float max_hp, string text)
     {
-        if (bodyFrame != null) StopCoroutine(bodyFrame);
-        if (footFrame != null) StopCoroutine(footFrame);
-        switch (status)
-        {
-            case Status.IDLE:
-                statusPlayer = Status.IDLE;
-                bodyFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[1], framePlayer.bodyFramesIdle));
-                footFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[2], framePlayer.footFramesIdle));
-                break;
-            case Status.RUN:
-                statusPlayer = Status.RUN;
-                bodyFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[1], framePlayer.bodyFramesRun));
-                footFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[2], framePlayer.footFramesRun));
-                break;
-            case Status.JUMP:
-                statusPlayer = Status.JUMP;
-                bodyFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[1], framePlayer.bodyFramesJump, true, SetStatusIdle, 0.2f));
-                footFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[2], framePlayer.footFramesJump, false, null, 0.5f));
-                break;
-            case Status.ATTACK:
-                statusPlayer = Status.ATTACK;
-                bodyFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[1], framePlayer.bodyFramesAttack, true, SetStatusIdle));
-                footFrame = StartCoroutine(AnimatorFrame.FrameGame(sprites[2], framePlayer.footFramesAttack));
-                break;
-        }
+         fill_bar_HP.fillAmount = (float)currency_hp/ (float)max_hp;
+        currentHP.text = text;
     }
-    void SetStatusIdle()
+    public void update_mp(float currency_mp, float max_mp, string text)
     {
-        statusPlayer = Status.IDLE;
-        PlayAnimation(statusPlayer);
+        fill_bar_MP.fillAmount = (float)currency_mp / (float)max_mp;
+        currentMP.text = text;
     }
-    void AnimationFullBody(bool isFull)
-    {
-        for (int i = 0; i < sprites.Length - 1; i++)
-        {
-            sprites[i].gameObject.SetActive(!isFull);
-        }
-        sprites[4].gameObject.SetActive(isFull);
-    }
+
+
 }
-public enum Status { IDLE, RUN, JUMP, ATTACK, HIT, DEATH }
-*/
