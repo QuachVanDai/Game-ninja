@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,8 @@ public class Player : NCKHMonoBehaviour
     public int _level=1;
     public float _percentExp;
     public int _gold;
+    public numberTxt numberTxt;
+    public Transform canvas;
     private Dictionary<int, Tuple<int, int>> playerDamage
         = new Dictionary<int, Tuple<int, int>>();
     public TextMeshProUGUI currentName;
@@ -59,14 +62,17 @@ public class Player : NCKHMonoBehaviour
                 Object = GameObject.Find("full_mp");
         fill_bar_MP = Object.GetComponent<Image>();
         setPlayerDamage();
+        currentName.text = _Name.ToString();
         currentLevel.text = _level.ToString();
         currentPercentExp.text = _percentExp.ToString("F2")+"%";
         _hp = _currhp;
         _mp = _currmp;
         update_hp(this._hp, this._hp,this._hp.ToString());
         update_mp(this._mp, this._mp, this._mp.ToString());
+        numberTxt = new numberTxt();
     }
- 
+    public TextMeshProUGUI txt_damaged;
+
     public Tuple<int, int> getDamage(int index)
     {
         Tuple<int, int> g = playerDamage[index];

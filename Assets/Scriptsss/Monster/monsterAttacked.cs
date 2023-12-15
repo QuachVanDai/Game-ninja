@@ -43,7 +43,7 @@ public class monsterAttacked : NCKHMonoBehaviour
     {
         currMoster._currhp -= damage;
         StartCoroutine(aniAcctacked());
-        currMoster.damaged(damage.ToString());
+        currMoster.numberTxt.aniTextY(currMoster.numberText,currMoster.canvas, transform, damage*(-1), new Vector3(0, 80, 0), 50, 0.3f, Color.red);
         if (currMoster._currhp < 0)
         {
             // i.Die(transform.position,Quaternion.identity);

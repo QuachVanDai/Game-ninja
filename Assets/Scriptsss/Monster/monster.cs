@@ -13,18 +13,18 @@ public class monster:NCKHMonoBehaviour
     public float _currhp;
     public float _damage;
     public float _number;
+    public Transform canvas;
     public Image fill_bar;
     Exp e = new Exp();
-    public TextMeshProUGUI txt_damaged;
+    public numberTxt numberTxt;
+    public TextMeshProUGUI numberText;
     public float HP { get { return this._hp; } }
     protected override void loadComponets()
     {
         base.loadComponets();
       //  _currhp = e.getExpMonsterTuple(1).Item1;
         this._hp = _currhp;
-        GameObject Object = GameObject.Find("txtdamaged");
-        txt_damaged = Object.GetComponent<TextMeshProUGUI>();
-        txt_damaged.gameObject.SetActive(false);
+        numberTxt =  new numberTxt();
     }
     public monster(int id,string name,int level,float exp, float hp,float damage,float number)
     {
@@ -41,15 +41,6 @@ public class monster:NCKHMonoBehaviour
         return this;
     }
 
-    public void damaged(string damaged)
-    {
-        txt_damaged.transform.localScale = transform.localScale;
-        txt_damaged.gameObject.SetActive(true);
-        txt_damaged.text = damaged;
-        txt_damaged.rectTransform.anchoredPosition = new Vector3(0,80,0);
-        var t = txt_damaged.rectTransform.DOAnchorPosY(txt_damaged.rectTransform.localPosition.y + 50, 0.3f)
-        .OnComplete(() => txt_damaged.gameObject.SetActive(false));
-    }
     public void update_hp(float currency_blood, float max_blood,string _name)
     {
         fill_bar.fillAmount = (float)currency_blood / (float)max_blood;

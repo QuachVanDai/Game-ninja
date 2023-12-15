@@ -75,8 +75,7 @@ public class PlayerAttack:NCKHMonoBehaviour
                 damage += skillParameters.getSkillLv15Parameters()[6];
             else { damage += skillParameters.getSkillLv15Parameters()[Player.Instance._level - 14]; }
         }
-        //
-        AddExp((int)damage*50);
+        AddExp((int)damage);
         monsterAttacted.Attacked((int)damage);
         skillAnimation.AnimationSkill(frameSkill[useSkill.Instance.getCurrKeySkill()]);
         PlayerController2D.Instance.Animator.SetBool("IsAttack", true);
@@ -100,6 +99,7 @@ public class PlayerAttack:NCKHMonoBehaviour
             double exp = (damage * ex.getExpMonsterDictionary()[monsterAttacted.currMoster._level]*100 )
             / ex.getExpPlayerDictionary()[Player.Instance._level];
         Debug.Log(exp);
+        Player.Instance.numberTxt.aniTextY(Player.Instance.currentName, Player.Instance.canvas, Player.Instance.currentName.transform, (int)damage , new Vector3(0, 1.2f, 0), 1, 0.3f, Color.blue);
         if (Player.Instance._percentExp + exp > 100)
         {
             Player.Instance._percentExp = 0;
@@ -123,26 +123,36 @@ public class PlayerAttack:NCKHMonoBehaviour
     {
         skillAnimation.AnimationSkillLv5_15(frameSkill[1]);
         isSkillLv5 = false;
-        InvokeRepeating(nameof(inCreaseHP), 0, 0.5f);
+        InvokeRepeating(nameof(inCreaseHPMP), 0, 0.5f);
         yield return new WaitForSeconds(1.5f);
-        CancelInvoke(nameof(inCreaseHP));
+        CancelInvoke(nameof(inCreaseHPMP));
         yield return new WaitForSeconds(frameSkill[1].timeSkill);
         isSkillLv5 = true;
     }
-    public void inCreaseHP()
+    public void inCreaseHPMP()
     {
         if (Player.Instance._level >= 10)
+        {
             Player.Instance._currhp += skillParameters.getSkillLv5Parameters()[6];
-        else { Player.Instance._currhp += skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; }
+            Player.Instance._currmp += skillParameters.getSkillLv5Parameters()[6];
+        }
+        else
+        { 
+            Player.Instance._currhp += skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
+            Player.Instance._currmp += skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
+        }
         if (Player.Instance._currhp >= Player.Instance.HP)
         {
             Player.Instance.update_hp(Player.Instance.HP, Player.Instance.HP, Player.Instance.HP.ToString());
             Player.Instance._currhp = Player.Instance.HP;
-            Debug.Log(Player.Instance.HP);
-            CancelInvoke(nameof(inCreaseHP));
-            return;
+        }
+        if (Player.Instance._currmp >= Player.Instance.MP)
+        {
+            Player.Instance.update_mp(Player.Instance.MP, Player.Instance.MP, Player.Instance.MP.ToString());
+            Player.Instance._currmp = Player.Instance.MP;
         }
         Player.Instance.update_hp(Player.Instance._currhp, Player.Instance.HP, Player.Instance._currhp.ToString());
+        Player.Instance.update_mp(Player.Instance._currmp, Player.Instance.MP, Player.Instance._currmp.ToString());
     }
     public void playerUseSkillLv15()
     {
