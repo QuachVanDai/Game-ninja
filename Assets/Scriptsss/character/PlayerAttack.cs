@@ -64,8 +64,8 @@ public class PlayerAttack:NCKHMonoBehaviour
     public IEnumerator playerAttack()
     {
         // 
-        float damage = Random.Range(Player.Instance.getDamage(Player.Instance._level).Item1,
-            Player.Instance.getDamage(Player.Instance._level).Item2) *
+        float damage = Random.Range(Player.Instance._setPlayer.getDamePlayerDictionary(Player.Instance._level).Item1,
+            Player.Instance._setPlayer.getDamePlayerDictionary(Player.Instance._level).Item2) *
             frameSkill[useSkill.Instance.getCurrKeySkill()].coefficient;
 
         // if player use skillLv15 , player can increase damage
@@ -98,7 +98,6 @@ public class PlayerAttack:NCKHMonoBehaviour
         }
             double exp = (damage * ex.getExpMonsterDictionary()[monsterAttacted.currMoster._level]*100 )
             / ex.getExpPlayerDictionary()[Player.Instance._level];
-        Debug.Log(exp);
         Player.Instance.numberTxt.aniTextY(Player.Instance.currentName, Player.Instance.canvas, Player.Instance.currentName.transform, (int)damage , new Vector3(0, 1.2f, 0), 1, 0.3f, Color.blue);
         if (Player.Instance._percentExp + exp > 100)
         {

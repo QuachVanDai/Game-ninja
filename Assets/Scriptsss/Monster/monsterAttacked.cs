@@ -43,9 +43,10 @@ public class monsterAttacked : NCKHMonoBehaviour
     {
         currMoster._currhp -= damage;
         StartCoroutine(aniAcctacked());
-        currMoster.numberTxt.aniTextY(currMoster.numberText,currMoster.canvas, transform, damage*(-1), new Vector3(0, 80, 0), 50, 0.3f, Color.red);
+        currMoster.numberTxt.aniTextY(currMoster.numberText,currMoster.canvas, transform, damage*(-1), new Vector3(0, 1.2f, 0), 1, 0.3f, Color.red);
         if (currMoster._currhp < 0)
         {
+            currMoster.update_hp(0, currMoster.HP, currMoster._name);
             // i.Die(transform.position,Quaternion.identity);
             systemUi.Instance.infoMonster.gameObject.SetActive(false);
             monsterController2D.PlayAnimation(monsterStatus.death);

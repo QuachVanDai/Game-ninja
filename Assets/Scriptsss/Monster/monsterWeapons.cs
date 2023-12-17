@@ -4,13 +4,14 @@ using UnityEngine;
 public class monsterWeapons : MonoBehaviour
 {
     private GameObject playerObject;
-    public int min_damage,max_damage;
+    public monster currMoster;
     public float bulletSpeed = 7f;
     public PlayerAttacked character;
     private void Start()
     {
         playerObject = GameObject.FindWithTag("player");
         character = FindAnyObjectByType<PlayerAttacked>();
+        currMoster = GetComponent<monster>();
     }
     private void FixedUpdate()
     {
@@ -23,8 +24,9 @@ public class monsterWeapons : MonoBehaviour
     {
         if (collision.gameObject.tag == "player")
         {
-            int damage = Random.Range(min_damage,max_damage);
-            character.Attacked(damage);
+           /* Debug.Log(currMoster._level);
+            int damage = Random.Range(currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item1, currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item2);
+            character.Attacked(damage);*/
             Destroy(gameObject);
         }
     }

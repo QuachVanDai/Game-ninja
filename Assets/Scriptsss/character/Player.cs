@@ -9,12 +9,12 @@ public class Player : NCKHMonoBehaviour
 {
     private static Player instance;
     public string _Name;
-    private float _hp=10000;
-    public float _currhp=10000;
-    private float _mp=10000;
-    public float _currmp=10000;
-    public string _className; 
-    public int _level=1;
+    private float _hp;
+    public float _currhp;
+    private float _mp;
+    public float _currmp;
+    public string _className;
+    public int _level;
     public float _percentExp;
     public int _gold;
     public numberTxt numberTxt;
@@ -30,11 +30,12 @@ public class Player : NCKHMonoBehaviour
     public TextMeshProUGUI currentLevel;
     public TextMeshProUGUI currentPercentExp;
     public TextMeshProUGUI currentGold;
+    public TextMeshProUGUI txt_damaged;
 
 
     [SerializeField] private Image fill_bar_HP;
     [SerializeField] private Image fill_bar_MP;
-    public Exp x;
+    public setPlayer _setPlayer;
 
     public float HP { get { return _hp; } }
     public float MP { get { return _mp; } }
@@ -49,6 +50,13 @@ public class Player : NCKHMonoBehaviour
     protected override void loadComponets()
     {
         base.loadComponets();
+        _setPlayer = new setPlayer();
+        _level = 1;
+        _currhp = _setPlayer.getHPPlayerDictionary()[_level];
+        _currmp = _setPlayer.getMPPlayerDictionary()[_level];
+        _hp = _currhp;
+        _mp = _currmp;
+
         GameObject Object = GameObject.Find("txt_hp");
         currentHP = Object.GetComponent<TextMeshProUGUI>();
         Object = GameObject.Find("txt_mp");
@@ -61,33 +69,17 @@ public class Player : NCKHMonoBehaviour
         fill_bar_HP = Object.GetComponent<Image>();
                 Object = GameObject.Find("full_mp");
         fill_bar_MP = Object.GetComponent<Image>();
-        setPlayerDamage();
         currentName.text = _Name.ToString();
         currentLevel.text = _level.ToString();
         currentPercentExp.text = _percentExp.ToString("F2")+"%";
-        _hp = _currhp;
-        _mp = _currmp;
-        update_hp(this._hp, this._hp,this._hp.ToString());
+        update_hp(this._hp, this._hp, this._hp.ToString());
         update_mp(this._mp, this._mp, this._mp.ToString());
+
+
         numberTxt = new numberTxt();
     }
-    public TextMeshProUGUI txt_damaged;
 
-    public Tuple<int, int> getDamage(int index)
-    {
-        Tuple<int, int> g = playerDamage[index];
-        return g;
-    }
-    public void setPlayerDamage()
-    {
-        int min_d=110, max_d=120;
-        for (int i = 1; i <= 20; i++)
-        {
-            playerDamage.Add(i  , new Tuple<int, int>(min_d, max_d));
-            min_d += 30;
-            max_d += 30;
-        }
-    }
+ 
     public Player GetCharacter()
     {
         return this;

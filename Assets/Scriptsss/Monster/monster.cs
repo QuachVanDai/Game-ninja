@@ -15,26 +15,21 @@ public class monster:NCKHMonoBehaviour
     public float _number;
     public Transform canvas;
     public Image fill_bar;
-    Exp e = new Exp();
+    public setMonster _setMonster = new setMonster();
     public numberTxt numberTxt;
     public TextMeshProUGUI numberText;
     public float HP { get { return this._hp; } }
     protected override void loadComponets()
     {
         base.loadComponets();
-      //  _currhp = e.getExpMonsterTuple(1).Item1;
-        this._hp = _currhp;
+        //  _currhp = e.getExpMonsterTuple(1).Item1;
+
         numberTxt =  new numberTxt();
     }
-    public monster(int id,string name,int level,float exp, float hp,float damage,float number)
+    private void Start()
     {
-        this._id = id;
-        this._name = name;
-        this._level = level;
-        this._exp = exp;
-        this._hp = hp;
-        this._damage = damage;
-        this._number = number;
+        _currhp = _setMonster.getHPMonsterDictionary()[_level];
+        this._hp = _currhp;
     }
     public monster GetMonster()
     {

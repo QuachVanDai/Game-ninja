@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [SerializeField]
-public  class Exp
+public class setPlayer
 {
-    private  int _key;
-    private  int _value;
-    private  Dictionary<int, int> ExpPlayer 
+  
+    private Dictionary<int, int> ExpPlayer
         = new Dictionary<int, int>();
     private Dictionary<int, int> HPPlayer
     = new Dictionary<int, int>();
@@ -16,40 +15,30 @@ public  class Exp
     private Dictionary<int, Tuple<int, int>> DamePlayer
     = new Dictionary<int, Tuple<int, int>>();
 
-    private  Dictionary<int, double>  ExpMonster
+    private Dictionary<int, double> ExpMonster
         = new Dictionary<int, double>();
-    public  int Key
-    {
-        get { return _key; }
-        set { _key = value; }
-    }
-    public  int Value
-    {
-        get { return _value; }
-        set { this._value = value; }
-    }
-    public Exp()
+  
+    public setPlayer()
     {
         setExpPlayerDictionary();
-        setExpMonsterDictionary();
+        setHPPlayerDictionary();
+        setMPPlayerDictionary();
+        setDamePlayerDictionary();
     }
- 
-    public  Dictionary<int, int>  getExpPlayerDictionary()
+
+    public Dictionary<int, int> getExpPlayerDictionary()
     {
         return ExpPlayer;
     }
-    public  Dictionary<int, double> getExpMonsterDictionary()
+  
+    public void setExpPlayerDictionary()
     {
-        return ExpMonster;
-    }
-    public  void setExpPlayerDictionary()
-    {
-        for(int i=1;i <=20; i++) 
+        for (int i = 1; i <= 20; i++)
         {
             double v = Math.Round(1500 * Math.Pow(i, 1.5f));
-            ExpPlayer.Add(i,  (int)v);
+            ExpPlayer.Add(i, (int)v);
         }
-        
+
     }
     public Dictionary<int, int> getHPPlayerDictionary()
     {
@@ -59,7 +48,7 @@ public  class Exp
     {
         for (int i = 1; i <= 20; i++)
         {
-            double v = Math.Round(50* Math.Pow(i, 0.6f));
+            double v = Math.Round(500 * Math.Pow(i, 0.6f));
             HPPlayer.Add(i, (int)v);
         }
 
@@ -72,7 +61,7 @@ public  class Exp
     {
         for (int i = 1; i <= 20; i++)
         {
-            double v = Math.Round(50 * Math.Pow(i, 0.6f));
+            double v = Math.Round(500 * Math.Pow(i, 0.6f));
             MPPlayer.Add(i, (int)v);
         }
     }
@@ -92,7 +81,12 @@ public  class Exp
         }
     }
 
-    public  void setExpMonsterDictionary()
+
+    public Dictionary<int, double> getExpMonsterDictionary()
+    {
+        return ExpMonster;
+    }
+    public void setExpMonsterDictionary()
     {
         for (int i = 1; i <= 20; i++)
         {

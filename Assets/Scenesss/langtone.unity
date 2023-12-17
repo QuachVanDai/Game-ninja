@@ -20485,7 +20485,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.6509434, g: 0.6531232, b: 0.8679245, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -43718,7 +43718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 999
+  m_text: 9999999999999999999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -43727,8 +43727,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292006655
-  m_fontColor: {r: 1, g: 0.8254717, b: 0.8254717, a: 1}
+    rgba: 4278250234
+  m_fontColor: {r: 0.9811321, g: 0.9169411, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -43761,7 +43761,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -87272,10 +87272,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Name: "Qu\xE1ch v\u0103n \u0110\u1EA1i"
-  _currhp: 10000
-  _currmp: 10000
+  _currhp: 1000
+  _currmp: 1000
   _className: 
-  _level: 20
+  _level: 1
   _percentExp: 0
   _gold: 0
   numberTxt: {fileID: 0}
@@ -87289,10 +87289,10 @@ MonoBehaviour:
   currentLevel: {fileID: 924994794}
   currentPercentExp: {fileID: 1139269780}
   currentGold: {fileID: 0}
-  fill_bar_HP: {fileID: 1050356680}
-  fill_bar_MP: {fileID: 502215242}
   txt_damaged: {fileID: 9128697578251613435, guid: 796e611b6e6eac24ca455821a7744d2d,
     type: 3}
+  fill_bar_HP: {fileID: 1050356680}
+  fill_bar_MP: {fileID: 502215242}
 --- !u!114 &9160984522533479192
 MonoBehaviour:
   m_ObjectHideFlags: 0
