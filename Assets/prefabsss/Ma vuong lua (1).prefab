@@ -358,8 +358,9 @@ GameObject:
   - component: {fileID: 4915013247696982109}
   - component: {fileID: 2059713716700844443}
   - component: {fileID: 1133937841548747879}
+  - component: {fileID: 5297611375005559563}
   m_Layer: 0
-  m_Name: Canvas (7)
+  m_Name: MonsterCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,6 +449,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5297611375005559563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5520560019790097684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4562a19f821eb449bb321bc8d8b49d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5770406056033779340
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,17 +655,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb7a77bf25fa6f43818208ec7de47c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 1
-  _name: ma vuong lua
+  _name: "Ma V\u01B0\u01A1ng l\u1EEDa"
   _level: 1
-  _exp: 50
   _currhp: 0
-  _damage: 51
-  _number: 0
+  _minDamage: 0
+  _maxDamage: 0
   canvas: {fileID: 2609832807660436260}
   fill_bar: {fileID: 5857855429768724539}
-  numberTxt: {fileID: 0}
-  numberText: {fileID: 0}
+  txt_damaged: {fileID: 2659219805037688058, guid: 796e611b6e6eac24ca455821a7744d2d,
+    type: 3}
 --- !u!114 &4742907075017060064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,6 +683,7 @@ MonoBehaviour:
   firePoint: {fileID: 6327173038803548937}
   bulletPrefab: {fileID: 3498865048540634120, guid: 0355c84687c99ac49a97f5867ee1de51,
     type: 3}
+  currMoster: {fileID: 0}
 --- !u!114 &1869400743139253756
 MonoBehaviour:
   m_ObjectHideFlags: 0

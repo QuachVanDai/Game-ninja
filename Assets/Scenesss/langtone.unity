@@ -168,10 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &2176839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2197,8 +2197,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 703182719}
-  - {fileID: 906828227}
+  - {fileID: 859094780}
   m_Father: {fileID: 1591783091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &256922564
@@ -2755,6 +2754,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 352518434}
   m_CullTransparentMesh: 1
+--- !u!1001 &353339408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 245670733}
+    m_Modifications:
+    - target: {fileID: 5770406056033779340, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_Name
+      value: Ma vuong lua (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770406056033779340, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66c116b368ba24e4588938d9047620da, type: 3}
 --- !u!1 &360833589
 GameObject:
   m_ObjectHideFlags: 0
@@ -19358,10 +19430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &504380191
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19544,10 +19616,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &536225664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19725,10 +19797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &557136290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20966,137 +21038,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702651259}
   m_CullTransparentMesh: 1
---- !u!1001 &703182718
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 245670733}
-    m_Modifications:
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _id
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _exp
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _name
-      value: Ma vuong lua
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _level
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 1573246152}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _currhp
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: _damage
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: fill_bar
-      value: 
-      objectReference: {fileID: 2006203325}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: numberText
-      value: 
-      objectReference: {fileID: 9128697578251613435, guid: 796e611b6e6eac24ca455821a7744d2d,
-        type: 3}
-    - target: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: txt_damaged
-      value: 
-      objectReference: {fileID: 9128697578251613435, guid: 796e611b6e6eac24ca455821a7744d2d,
-        type: 3}
-    - target: {fileID: 5770406056033779340, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_Name
-      value: Ma vuong lua (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5770406056033779340, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 66c116b368ba24e4588938d9047620da, type: 3}
---- !u!4 &703182719 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
-    type: 3}
-  m_PrefabInstance: {fileID: 703182718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &719961105
 GameObject:
   m_ObjectHideFlags: 0
@@ -22516,6 +22457,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853477828}
   m_CullTransparentMesh: 1
+--- !u!4 &859094780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6327173038803548937, guid: 66c116b368ba24e4588938d9047620da,
+    type: 3}
+  m_PrefabInstance: {fileID: 353339408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &859094788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1815561853969507243, guid: 66c116b368ba24e4588938d9047620da,
+    type: 3}
+  m_PrefabInstance: {fileID: 353339408}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb7a77bf25fa6f43818208ec7de47c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885023876
 GameObject:
   m_ObjectHideFlags: 0
@@ -22685,91 +22644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &906828226
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 245670733}
-    m_Modifications:
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6324411737360367970, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_Name
-      value: khi ngo (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6324411737360367970, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7365083551227607980, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-        type: 3}
-      propertyPath: t
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4cba6525c7b52534dbf3560a569f2e8e, type: 3}
---- !u!4 &906828227 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3250254920085860634, guid: 4cba6525c7b52534dbf3560a569f2e8e,
-    type: 3}
-  m_PrefabInstance: {fileID: 906828226}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &916504520
 GameObject:
   m_ObjectHideFlags: 0
@@ -22890,10 +22764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &916799124
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25140,10 +25014,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &973487211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25684,10 +25558,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1003037283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26553,7 +26427,7 @@ GameObject:
   - component: {fileID: 1089148430}
   - component: {fileID: 1089148433}
   m_Layer: 7
-  m_Name: Canvas
+  m_Name: PlayerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26618,7 +26492,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1089148432
 Canvas:
   m_ObjectHideFlags: 0
@@ -27602,10 +27476,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1190526506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30512,7 +30386,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10000
+  m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -30710,10 +30584,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1550841664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38224,10 +38098,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1557447831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -38404,12 +38278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUseSkill: 
---- !u!224 &1573246152 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2609832807660436260, guid: 66c116b368ba24e4588938d9047620da,
-    type: 3}
-  m_PrefabInstance: {fileID: 703182718}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1575883213
 GameObject:
   m_ObjectHideFlags: 0
@@ -38531,8 +38399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lstPrefas:
-  - {fileID: 703182719}
-  - {fileID: 906828227}
+  - {fileID: 859094780}
 --- !u!1 &1596051984
 GameObject:
   m_ObjectHideFlags: 0
@@ -38783,7 +38650,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10000
+  m_text: 500
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -41033,10 +40900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1702674213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42920,10 +42787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1913245445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43022,10 +42889,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1913453521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43326,10 +43193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1939989975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -43673,7 +43540,7 @@ GameObject:
   - component: {fileID: 1956099577}
   - component: {fileID: 1956099576}
   m_Layer: 5
-  m_Name: txtname
+  m_Name: NamePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43718,7 +43585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 9999999999999999999
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -43915,10 +43782,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &1967075862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44235,18 +44102,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978119485}
   m_CullTransparentMesh: 1
---- !u!114 &2006203325 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5857855429768724539, guid: 66c116b368ba24e4588938d9047620da,
-    type: 3}
-  m_PrefabInstance: {fileID: 703182718}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2008216947
 GameObject:
   m_ObjectHideFlags: 0
@@ -44382,10 +44237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &2011509213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44484,10 +44339,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &2020113668
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -52788,10 +52643,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bca752a8e6e8494c974028c683ae01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster: {fileID: 3588285945738567369, guid: 68190cb6fb4a8fe4e9e90552661e20cf, type: 3}
+  Monster: {fileID: 859094788}
   SpawnTime: 5
   clonedMonster: {fileID: 0}
-  monsterName: {fileID: 703182719}
+  monsterName: {fileID: 859094780}
 --- !u!212 &2110657773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87272,13 +87127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Name: "Qu\xE1ch v\u0103n \u0110\u1EA1i"
-  _currhp: 1000
-  _currmp: 1000
+  _currhp: 500
+  _currmp: 500
   _className: 
   _level: 1
   _percentExp: 0
   _gold: 0
-  numberTxt: {fileID: 0}
+  _minDamage: 110
+  _maxDamage: 120
   canvas: {fileID: 1089148429}
   currentName: {fileID: 1956099576}
   currentHP: {fileID: 1510096830}
@@ -87289,7 +87145,7 @@ MonoBehaviour:
   currentLevel: {fileID: 924994794}
   currentPercentExp: {fileID: 1139269780}
   currentGold: {fileID: 0}
-  txt_damaged: {fileID: 9128697578251613435, guid: 796e611b6e6eac24ca455821a7744d2d,
+  txt_damaged: {fileID: 2659219805037688058, guid: 796e611b6e6eac24ca455821a7744d2d,
     type: 3}
   fill_bar_HP: {fileID: 1050356680}
   fill_bar_MP: {fileID: 502215242}

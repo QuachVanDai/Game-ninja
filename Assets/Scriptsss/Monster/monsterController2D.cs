@@ -1,7 +1,6 @@
 
 using UnityEngine;
 public enum monsterStatus { idle, move, attack, death }
-
 public class monsterController2D : MonoBehaviour
 {
 

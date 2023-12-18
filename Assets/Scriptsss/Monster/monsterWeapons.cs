@@ -1,12 +1,11 @@
-﻿
-using UnityEngine;
-
-public class monsterWeapons : MonoBehaviour
+﻿using UnityEngine;
+public class monsterWeapons : NCKHMonoBehaviour
 {
     private GameObject playerObject;
     public monster currMoster;
     public float bulletSpeed = 7f;
     public PlayerAttacked character;
+    public float Damage;
     private void Start()
     {
         playerObject = GameObject.FindWithTag("player");
@@ -24,20 +23,8 @@ public class monsterWeapons : MonoBehaviour
     {
         if (collision.gameObject.tag == "player")
         {
-           /* Debug.Log(currMoster._level);
-            int damage = Random.Range(currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item1, currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item2);
-            character.Attacked(damage);*/
+            character.Attacked((int)Damage);
             Destroy(gameObject);
         }
     }
 }
-/*// Tính toán thời gian di chuyển theo trục x
-float timeToTarget = Vector2.Distance(firePoint.position, target.position) / bulletSpeed;
-
-// Tính toán vận tốc theo trục y để theo hình vòng cung (parabola)
-float verticalSpeed = (target.position.y - firePoint.position.y - 0.5f * gravity * Mathf.Pow(timeToTarget, 2)) / timeToTarget;
-
-// Áp dụng vận tốc cho viên đạn
-
-bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * bulletSpeed, verticalSpeed);
-Destroy(bullet, timeToTarget);*/

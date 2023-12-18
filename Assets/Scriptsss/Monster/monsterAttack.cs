@@ -1,19 +1,21 @@
 ﻿
 using UnityEngine;
-using System;
-[Serializable]
-public class monsterAttack :MonoBehaviour
+
+public class monsterAttack :NCKHMonoBehaviour
 {
     public float radius = 1.0f;
     public LayerMask targetPlayer;
     public Transform firePoint;
     public GameObject bulletPrefab;
-     GameObject bullet;
+     monsterWeapons bullet;
     private monsterAttacked MonAttacked;
+    public monster currMoster;
     // Khi nhấn nút bắn (ví dụ nút space)
     private void Start()
     {
         MonAttacked = GetComponent<monsterAttacked>();
+        currMoster = GetComponent<monster>();
+
     }
 
     private void Update()
@@ -23,7 +25,9 @@ public class monsterAttack :MonoBehaviour
     void Shoot()
     {
         // Tạo ra một đạn từ prefab
-       bullet=  Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+       GameObject g = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+       bullet = g.GetComponent<monsterWeapons>();
+       bullet.Damage = Random.Range(currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item1, currMoster._setMonster.getDameMonsterDictionary(currMoster._level).Item2);
         CancelInvoke(nameof(Shoot));
     }
     public void findPlayer()

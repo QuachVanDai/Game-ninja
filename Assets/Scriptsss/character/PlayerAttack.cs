@@ -98,7 +98,7 @@ public class PlayerAttack:NCKHMonoBehaviour
         }
             double exp = (damage * ex.getExpMonsterDictionary()[monsterAttacted.currMoster._level]*100 )
             / ex.getExpPlayerDictionary()[Player.Instance._level];
-        Player.Instance.numberTxt.aniTextY(Player.Instance.currentName, Player.Instance.canvas, Player.Instance.currentName.transform, (int)damage , new Vector3(0, 1.2f, 0), 1, 0.3f, Color.blue);
+        Player.Instance.textGUI((int)damage,Color.blue);
         if (Player.Instance._percentExp + exp > 100)
         {
             Player.Instance._percentExp = 0;
