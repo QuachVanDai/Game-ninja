@@ -42,13 +42,14 @@ public class PlayerAttack:NCKHMonoBehaviour
             if (monsterAttacted == null)
             {
                 //systemUi.Instance.infoMonster.gameObject.SetActive(false);
-                Debug.Log("Khong co muc tieu"); return; 
+                TextTemplate.Instance.SetText(TagScript.notTarget);
+                return; 
             }
 
             // Calculate the distance from the player to the target
             distance = Vector2.Distance(transform.position, monsterAttacted.transform.position);
             // 
-            if ( distance>4) { Debug.Log("khoang cach qua xa"); return; }
+            if ( distance>4) { TextTemplate.Instance.SetText(TagScript.khoangCach); return; }
 
             // if player use skilllv5 or skilllv15  , player cannot attack.
             if (useSkill.Instance.getCurrKeySkill() == 1 || useSkill.Instance.getCurrKeySkill() == 3){  Debug.Log("Skill khong phu hop"); return;}
@@ -81,8 +82,8 @@ public class PlayerAttack:NCKHMonoBehaviour
         PlayerController2D.Instance.Animator.SetBool("IsAttack", true);
         //animator.SetBool("IsAttack", true);
         isActtack = false;
-        Player.Instance._currmp -= frameSkill[useSkill.Instance.getCurrKeySkill()].mp;
-        Player.Instance.update_mp(Player.Instance._currmp, Player.Instance.MP, Player.Instance._currmp.ToString());
+        Player.Instance.update_mp(frameSkill[useSkill.Instance.getCurrKeySkill()].mp*(-1));
+
         yield return new WaitForSeconds(0.23f);
         PlayerController2D.Instance.Animator.SetBool("IsAttack", false);
         // animator.SetBool("IsAttack", false);
@@ -112,7 +113,7 @@ public class PlayerAttack:NCKHMonoBehaviour
     {
         if (useSkill.Instance.getIsUseSkill(1) == false) {  return; }
         ManaUseSkill();
-        if (!isSkillLv5) { Debug.Log("Dang hoi chieu"); return; }
+        if (!isSkillLv5) { TextTemplate.Instance.SetText(TagScript.hoiChieu); return; }
         if (isSkillLv5)
         {
             StartCoroutine(UseSkillLv5());
@@ -130,34 +131,25 @@ public class PlayerAttack:NCKHMonoBehaviour
     }
     public void inCreaseHPMP()
     {
+        float hp, mp;
         if (Player.Instance._level >= 10)
         {
-            Player.Instance._currhp += skillParameters.getSkillLv5Parameters()[6];
-            Player.Instance._currmp += skillParameters.getSkillLv5Parameters()[6];
+            hp = skillParameters.getSkillLv5Parameters()[6];
+            mp = skillParameters.getSkillLv5Parameters()[6];
         }
         else
         { 
-            Player.Instance._currhp += skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
-            Player.Instance._currmp += skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
+            hp = skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
+            mp = skillParameters.getSkillLv5Parameters()[Player.Instance._level - 4]; 
         }
-        if (Player.Instance._currhp >= Player.Instance.HP)
-        {
-            Player.Instance.update_hp(Player.Instance.HP, Player.Instance.HP, Player.Instance.HP.ToString());
-            Player.Instance._currhp = Player.Instance.HP;
-        }
-        if (Player.Instance._currmp >= Player.Instance.MP)
-        {
-            Player.Instance.update_mp(Player.Instance.MP, Player.Instance.MP, Player.Instance.MP.ToString());
-            Player.Instance._currmp = Player.Instance.MP;
-        }
-        Player.Instance.update_hp(Player.Instance._currhp, Player.Instance.HP, Player.Instance._currhp.ToString());
-        Player.Instance.update_mp(Player.Instance._currmp, Player.Instance.MP, Player.Instance._currmp.ToString());
+        Player.Instance.update_hp(hp);
+        Player.Instance.update_mp(mp);
     }
     public void playerUseSkillLv15()
     {
         if (useSkill.Instance.getIsUseSkill(3) == false) { return; }
         ManaUseSkill();
-        if (!isSkillLv15) { Debug.Log("Dang hoi chieu"); return; }
+        if (!isSkillLv15) { TextTemplate.Instance.SetText(TagScript.hoiChieu); return; }
         if (isSkillLv15)
         {
             StartCoroutine(UseSkillLv15());

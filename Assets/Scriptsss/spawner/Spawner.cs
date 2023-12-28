@@ -3,6 +3,8 @@ using UnityEngine;
 
 public abstract class Spawner : NCKHMonoBehaviour
 {
+    [Header("Spawner")]
+    [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> lstPrefas;
     protected override void loadComponets()
     {
@@ -48,4 +50,5 @@ public abstract class Spawner : NCKHMonoBehaviour
     {
         return lstPrefas;
     }
+ 
 }

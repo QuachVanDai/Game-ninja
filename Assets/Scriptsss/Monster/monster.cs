@@ -26,6 +26,7 @@ public class monster:NCKHMonoBehaviour
     
     public void textGUI(int damage, Color color)
     {
+        
         GameObject g = Instantiate(txt_damaged);
         numberTxt numberTxt = g.GetComponent<numberTxt>();
         numberTxt.aniTextY1(canvas, (int)damage, new Vector3(0, 1.2f, 0), 1, 0.5f, color);

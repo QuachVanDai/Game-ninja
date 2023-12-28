@@ -93,8 +93,8 @@ public class Player : NCKHMonoBehaviour
         currentName.text = _Name.ToString();
         currentLevel.text = _level.ToString();
         currentPercentExp.text = _percentExp.ToString("F2")+"%";
-        update_hp(this._hp, this._hp, this._hp.ToString());
-        update_mp(this._mp, this._mp, this._mp.ToString());
+        update_hp(0);
+        update_mp(0);
     }
 
  
@@ -102,16 +102,27 @@ public class Player : NCKHMonoBehaviour
     {
         return this;
     }
-    public void update_hp(float currency_hp, float max_hp, string text)
+    public void update_hp(float hp)
     {
-         fill_bar_HP.fillAmount = (float)currency_hp/ (float)max_hp;
-        currentHP.text = text;
+        _currhp += hp;
+        _currhp = _currhp >= HP?HP:_currhp;
+        fill_bar_HP.fillAmount = _currhp / HP;
+        currentHP.text = _currhp.ToString();
     }
-    public void update_mp(float currency_mp, float max_mp, string text)
+    public void update_mp(float mp)
     {
-        fill_bar_MP.fillAmount = (float)currency_mp / (float)max_mp;
-        currentMP.text = text;
+        _currmp += mp;
+        _currmp = _currmp >= MP ? MP : _currmp;
+        fill_bar_MP.fillAmount = _currmp / MP;
+        currentMP.text =_currmp.ToString();
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "potion")
+        {
+            useItem i = collision.gameObject.GetComponent<useItem>();
+            inventoryManager.Instance.Add(i.item,1);
+        }
+    }
 
 }

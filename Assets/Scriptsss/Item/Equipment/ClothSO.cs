@@ -18,7 +18,7 @@ public class ClothSO : EquipmentSO
         base.Update();
 
         this.equipmentType = EquipmentType.Cloth;
-        this.Description = "Giúp giảm sát thương";
+        this.Description = "Giúp giảm sát thương tấn công từ quái vật.";
 
         this.SetSpriteIdle(bodyIdle);
         this.SetSpriteRun(bodyRun);

@@ -1,19 +1,40 @@
 ﻿
 using UnityEngine;
 
-public class PlayerItem : MonoBehaviour
+public class PlayerItem : NCKHMonoBehaviour
 {
+    private static PlayerItem instance;
+
     [SerializeField] private Head characterHead;
     [SerializeField] private Body characterBody;
     [SerializeField] private Leg characterLeg;
     [SerializeField] private Weapon characterWeapon;
 
     [Header("Thay đổi trang phục khi mặc trang bị")]
-    [SerializeField] ItemSO avatarSO;
-    [SerializeField] ItemSO clothSO;
-    [SerializeField] ItemSO pantSO;
-    [SerializeField] ItemSO weaponSO;
+    [SerializeField] AvatarSO avatarSO;
+    [SerializeField] ClothSO clothSO;
+    [SerializeField] PantSO pantSO;
+    //  [SerializeField] useItem weaponSO;
 
+    public static PlayerItem Instance { get => instance; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        PlayerItem.instance = this;
+    }
+    public void setPant(PantSO pant)
+    {
+        pantSO = pant;
+    }
+    public void setCloth(ClothSO cloth)
+    {
+        clothSO = cloth;
+    }
+    public void setPant(AvatarSO avatar)
+    {
+        avatarSO = avatar;
+    }
     // Hàm tự động tìm các đối tượng, chỉ thực thi trong Editor
     private void OnValidate()
     {
@@ -34,6 +55,7 @@ public class PlayerItem : MonoBehaviour
             CharacterCustomization(characterHead.headDown, avatarSO.GetSpriteDown);
         }
 
+    
         //// Thay đổi Áo
         if (clothSO != null)
         {
@@ -52,10 +74,10 @@ public class PlayerItem : MonoBehaviour
             CharacterCustomization(characterLeg.legAttack, pantSO.GetSpriteAttack);
             CharacterCustomization(characterLeg.legDown, pantSO.GetSpriteDown);
         }
-        if (weaponSO != null)
+        /*if (weaponSO != null)
         {
             CharacterCustomization(characterWeapon.weapon, weaponSO.GetSpriteDown);
-        }
+        }*/
     }
 
     // Hàm thay đổi trang phục

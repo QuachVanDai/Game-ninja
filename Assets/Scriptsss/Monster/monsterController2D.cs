@@ -4,7 +4,7 @@ public enum monsterStatus { idle, move, attack, death }
 public class monsterController2D : MonoBehaviour
 {
 
-    private monsterStatus Status;
+    public  monsterStatus Status;
     public Animator ani;
     public float t;
     [Range(1,3)]

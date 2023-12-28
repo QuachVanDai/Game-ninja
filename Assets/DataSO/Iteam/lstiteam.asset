@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1d7214d48d38a4290693f546cc5002, type: 3}
+  m_Name: lstiteam
+  m_EditorClassIdentifier: 
+  _name: potion
+  dropRateList:
+  - itemSO: {fileID: 11400000, guid: 9bbf73c1e54f7494a86ec14c3f9c4f5e, type: 2}
+    dropRate: 0
+    minDrop: 0
+    maxDrop: 0
+  - itemSO: {fileID: 11400000, guid: 45a8c7b5f7ba2e140be938b1155728cc, type: 2}
+    dropRate: 0
+    minDrop: 0
+    maxDrop: 0
+  - itemSO: {fileID: 11400000, guid: 6b7358edf294b024f96d7621c489735d, type: 2}
+    dropRate: 0
+    minDrop: 0
+    maxDrop: 0

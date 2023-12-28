@@ -32,5 +32,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 88be229564c259c45944c896743c6e07, type: 3}
   - {fileID: 21300000, guid: 05a9f9558a60f264c829e31e15138f71, type: 3}
   - {fileID: 21300000, guid: 88be229564c259c45944c896743c6e07, type: 3}
-  mp: 50
+  mp: 30
   timeSkill: 5
+  coefficient: 0

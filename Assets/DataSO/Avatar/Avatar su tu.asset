@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ff6bc9c66f2b240b3b1d62815f18f8, type: 3}
   m_Name: Avatar su tu
   m_EditorClassIdentifier: 
-  id: 42
-  name: Goku ssj 3
-  icon: {fileID: 0}
-  powerRequired: 2000000
-  Description: "D\xF9ng \u0111\u1EC3 thay \u0111\u1ED5i khu\xF4n m\u1EB7t"
+  itemName: "M\u1EB7t n\u1EA1 s\u01B0 t\u1EED"
   itemType: 2
+  icon: {fileID: 21300000, guid: 1f5905c1b6d32ad45a72f9df11b86512, type: 3}
+  level: 1
+  isStackable: 0
+  Description: "D\xF9ng \u0111\u1EC3 thay \u0111\u1ED5i khu\xF4n m\u1EB7t"
   equipmentType: 5
   headIdle:
   - {fileID: 21300000, guid: 1f5905c1b6d32ad45a72f9df11b86512, type: 3}

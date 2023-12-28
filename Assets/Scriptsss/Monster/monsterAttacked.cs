@@ -8,6 +8,7 @@ public class monsterAttacked : NCKHMonoBehaviour
     public Transform selected;
     public Transform ani_Attacked;
     public PlayerAttack PlayerAttack;
+    public junkSO junkSO;
     void Start()
     {
         monsterController2D = GetComponent<monsterController2D>();
@@ -43,7 +44,8 @@ public class monsterAttacked : NCKHMonoBehaviour
     {
         currMoster._currhp -= damage;
         StartCoroutine(aniAcctacked());
-        currMoster.textGUI( damage*(-1), Color.yellow);
+        currMoster.textGUI( damage*(-1), new Color(1,1,1));
+        itemDropSpawner.Instance.Drop(junkSO.dropRateList,transform.position,Quaternion.identity);
         if (currMoster._currhp < 0)
         {
             currMoster.update_hp(0, currMoster.HP, currMoster._name);

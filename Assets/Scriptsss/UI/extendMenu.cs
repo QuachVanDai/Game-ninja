@@ -15,6 +15,8 @@ public class extendMenu : MonoBehaviour
 
     [SerializeField] private bool isDefaultExpand;
 
+    [SerializeField] private GameObject[] closeAllTab;
+
     private bool _isNormal = true;
     Tweener _tweener;
 
@@ -33,9 +35,16 @@ public class extendMenu : MonoBehaviour
             ToExpandState();
         }
     }
-
+    public void CloseAll()
+    {
+        foreach(GameObject g in closeAllTab)
+        {
+            g.SetActive(false);
+        }
+    }
     public void ToNormalState()
     {
+         CloseAll();
         _isNormal = true;
         _tweener?.Kill();
         _tweener = rectTransform.DOSizeDelta(normalStateArea, 0.25f);
@@ -43,6 +52,7 @@ public class extendMenu : MonoBehaviour
 
     public void ToExpandState()
     {
+        CloseAll();
         _isNormal = false;
         _tweener?.Kill();
         _tweener = rectTransform.DOSizeDelta(expandStateArea, 0.25f);

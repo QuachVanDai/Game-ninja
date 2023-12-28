@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ecf5a722a556647abd75decb1d85b6, type: 3}
   m_Name: quan cap 5
   m_EditorClassIdentifier: 
-  id: 22
-  name: "Qu\u1EA7n v\u1EA3i b\xF4ng \u0111\u1ECF"
-  icon: {fileID: 0}
-  powerRequired: 657
-  Description: "Gi\xFAp t\u0103ng HP"
+  itemName: "Qu\u1EA7n v\u1EA3i b\xF4ng \u0111\u1ECF"
   itemType: 2
+  icon: {fileID: 21300000, guid: 99dfa275dd2d2c643831cffb082504a6, type: 3}
+  level: 5
+  isStackable: 0
+  Description: "Gi\xFAp c\u01A1 th\u1EC3 t\u0103ng l\u01B0\u1EE3ng HP v\xE0 MP "
   equipmentType: 1
   HpValue: 32000
   legIdle:

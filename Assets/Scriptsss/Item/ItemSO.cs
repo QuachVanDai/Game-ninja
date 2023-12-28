@@ -3,18 +3,17 @@ using UnityEngine;
 
 public enum ItemType
 {
-    None, Potion, Equipment, Quest
+    None, Potion, Equipment, Other
 }
 
 public class ItemSO: ScriptableObject
 {
-    public int id;
-    public new string name;
-    public Sprite icon;
-    public int powerRequired;
-    public string Description;
+    public string itemName;
     public ItemType itemType;
-
+    public Sprite icon;
+    public int level;
+    public bool isStackable = true;
+    public string Description;
 
     public void OnEnable()
     {
@@ -23,50 +22,17 @@ public class ItemSO: ScriptableObject
 
     public virtual void Update()
     {
-        if(this.icon != null )
-        {
-            this.id = int.Parse(this.icon.name);
-        }    
+           
     }
+    public void show()
+    {
 
-    private Sprite[] spriteIdle;
-    public Sprite[] GetSpriteIdle
-    {
-        get { return this.spriteIdle; }
     }
-    public void SetSpriteIdle(Sprite[] sprite)
+    public virtual ItemSO getItemSO() { return this; }
+    private int _xu;
+    public int XU
     {
-        this.spriteIdle = sprite;
-    }    
-
-
-    private Sprite[] spriteRun;
-    public Sprite[] GetSpriteRun
-    {
-        get { return this.spriteRun; }
-    }
-    public void SetSpriteRun(Sprite[] sprite)
-    {
-        this.spriteRun = sprite;
-    }
-
-
-    private Sprite[] spriteAttack;
-    public Sprite[] GetSpriteAttack
-    {
-        get { return this.spriteAttack; }
-    }
-    public void SetSpriteAttack(Sprite[] sprite)
-    {
-        this.spriteAttack = sprite;
-    }
-    private Sprite[] spriteDown;
-    public Sprite[] GetSpriteDown
-    {
-        get { return this.spriteDown; }
-    }
-    public void SetSpriteDown(Sprite[] sprite)
-    {
-        this.spriteDown = sprite;
+        get { return _xu; }
+        set { _xu = value; }
     }
 }

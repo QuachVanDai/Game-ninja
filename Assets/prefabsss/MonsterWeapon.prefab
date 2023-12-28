@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8608366445808170582}
   - component: {fileID: 8675480298110271402}
   - component: {fileID: 2702362276630095831}
-  - component: {fileID: 5631131911664583259}
   - component: {fileID: 8657439929668545950}
+  - component: {fileID: 6172721648724404090}
   m_Layer: 0
   m_Name: MonsterWeapon
   m_TagString: Untagged
@@ -150,22 +150,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.285
---- !u!114 &5631131911664583259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3498865048540634120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b830ffca6f6015499e6f9e6234bce51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  min_damage: 30
-  max_damage: 40
-  bulletSpeed: 5
-  character: {fileID: 0}
 --- !u!114 &8657439929668545950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +162,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041c568e4ec79d247b505e3715f4f370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6172721648724404090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498865048540634120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b830ffca6f6015499e6f9e6234bce51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currMoster: {fileID: 0}
+  bulletSpeed: 7
+  character: {fileID: 0}
+  Damage: 0

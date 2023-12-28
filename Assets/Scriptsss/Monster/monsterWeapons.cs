@@ -24,7 +24,6 @@ public class monsterWeapons : NCKHMonoBehaviour
         if (collision.gameObject.tag == "player")
         {
             character.Attacked((int)Damage);
-            Destroy(gameObject);
         }
     }
 }
